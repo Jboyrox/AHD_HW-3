@@ -40,7 +40,9 @@ In addition to testing the basic functionality of the DDRR, it is also possible 
 Overall, by using the VHDL DDLR testbench, it is possible to gain a high degree of confidence in the correctness of the Verilog DDRR.
 
 Here is an example of a VHDL testbench for the DDLR:
-<img width="941" alt="Screenshot 2023-10-20 at 12 05 44 PM" src="https://github.com/Jboyrox/AHD_HW-3/assets/45749588/1eae934e-4641-4667-80ff-f091424b6c2c">
+
+<img width="941" alt="Screenshot 2023-10-20 at 12 05 44 PM" src="https://github.com/Jboyrox/AHD_HW-3/assets/45749588/281de985-c556-4bfd-8f2f-b1b4b38a10a4">
+
 
 
 This testbench can be used to test the DDLR with all possible data inputs and amounts of rotation. The assert statement will ensure that the output of the DDLR is correct for each test case.
