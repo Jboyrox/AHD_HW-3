@@ -40,40 +40,8 @@ In addition to testing the basic functionality of the DDRR, it is also possible 
 Overall, by using the VHDL DDLR testbench, it is possible to gain a high degree of confidence in the correctness of the Verilog DDRR.
 
 Here is an example of a VHDL testbench for the DDLR:
-entity ddlr_tb is
-end entity;
+<img width="941" alt="Screenshot 2023-10-20 at 12 05 44 PM" src="https://github.com/Jboyrox/AHD_HW-3/assets/45749588/1eae934e-4641-4667-80ff-f091424b6c2c">
 
-architecture behavior of ddlr_tb is
-  signal data_in : std_logic_vector(31 downto 0);
-  signal amount : std_logic_vector(4 downto 0);
-  signal data_out : std_logic_vector(31 downto 0);
-
-  component ddlr
-    port (
-      data_in : in std_logic_vector(31 downto 0);
-      amount : in std_logic_vector(4 downto 0);
-      data_out : out std_logic_vector(31 downto 0)
-    );
-  end component;
-
-begin
-  uut : ddlr
-    port map (
-      data_in => data_in,
-      amount => amount,
-      data_out => data_out
-    );
-
-  process
-  begin
-    for i in 0 to 255 loop
-      data_in <= std_logic_vector(to_unsigned(i, 32));
-      amount <= std_logic_vector(to_unsigned(i % 32, 5));
-      wait for 10 ns;
-      assert data_out = std_logic_vector(rotate_left(to_unsigned(data_in, 32), to_unsigned(amount, 5)));
-    end loop;
-  end process;
-end architecture;
 
 This testbench can be used to test the DDLR with all possible data inputs and amounts of rotation. The assert statement will ensure that the output of the DDLR is correct for each test case.
 
